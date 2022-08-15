@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--HTML for UAT Space in CSC102
+    By: Mohanad Horani
+    mohhoran@uat.edu-->
+<html>
+    <head>
+        <!--links up code.js with our html file-->
+        <script src="code.js"></script>
+        <script src="launchDataDis.js"></script>
+        <!--raw data for the dom-->
+        <script src="dataLoader.js"></script>
+        <!-- Stylesheet link-->
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <!--title at top bar for webpage-->
+        <title>
+            Mohanad's UATSpace Page
+    </title>
+    <script>
+        //create some needed variable for the dom
+        var theTime = new Date();
+        var time_interval = 5000;
+        var last_interation = 0;
+        var running = true;
+        var index = 0;
+        var timer;
+        var data = getData();
+    </script>
+
+</head>
+
+
+
+<body>
+    <table>
+        <td><img src = "UATspaceLogo.jpg"></td>
+        <td><h1>UAT Space Program</h1></td>
+    </table>
+    <br>
+    <table id="data" width="70%" border="2">
+        <col width ="35%"><col width = "35%">
+        <thead>
+            <th>Data Type</th>
+            <th>Reading</th>
+        </thead>
+        <tbody>
+            <tr id="seconds"></tr>
+            <tr id="latitude"></tr>
+            <tr id="longitude"></tr>
+            <tr id="gpsAltitude"></tr>
+            <tr id="bmpSensorAlt"></tr>
+            <tr id="bmpSensorPress"></tr>
+            <tr id ="bmpSensorTemp"></tr>
+            <tr id="digSensorTemp"></tr>
+            <tr id="cssSensorTemp"></tr>
+            <tr id="cssSensorCO2"></tr>
+            <tr id="cssSensorTVOC"></tr>
+            <tr id="UV"></tr>
+            <tr id="accelX"></tr>
+            <tr id="accelY"></tr>
+            <tr id="accelZ"></trr>
+            <tr id ="magneticX"></tr>
+            <tr id="magneticY"></tr>
+            <tr id ="magneticZ"></tr>
+            <tr id ="gyroX"></tr>
+            <tr id ="gyroY"></tr>
+            <tr id="gyroZ"></tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <!--Big bold header material-->
+    <br>
+    <br>
+    The current time is: <div id="timeDisplay">Press start for time</div>
+    <button onclick="start();" id="startButton" class="button">Start</button>
+    <button onclick="stop();" id="stopButton" class="button" style="margin:10px">Stop</button>
+    <br>
+    <br>
+    <br>
+    <!--Creates a button called "Play Space Station Sounds" which when clicked, plays the sound from the mp3 file.-->
+    <button onclick="playStation();">Play Space Station Sounds</button><br>
+    <br>
+    <br>
+    <br>
+    Countdown Timer<br>
+    <div id="countdownDisplay">Countdown will display here</div>
+    <br>
+    <!--Die1 results display window-->
+    Die1 result: <div id="die1Res">result here when started</div><br>
+    <!--Die2 results display window-->
+    Die2 result: <div id="die2Res">result here when started</div><br>
+    <!--Game result display window-->
+    Game result: <div id="gameRes">result here when started</div><br>
+    <!--Creates a line break in the code-->
+    <br>
+    <!--Displays a button that can be clicked which is titled "playCraps"-->
+    <button onclick= "playCraps();">Play Craps</button>
+    </body>
+</html>
